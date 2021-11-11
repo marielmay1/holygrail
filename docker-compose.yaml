@@ -1,0 +1,15 @@
+
+version: "3.9"
+services:
+
+  redis:
+    image: redis:latest
+    ports:
+      - "6379:6379"
+
+  holy-grail:
+    build: .
+    ports:
+      - "3000:3000"
+    depends_on:
+      - redis
